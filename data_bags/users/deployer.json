@@ -1,0 +1,9 @@
+{
+	"id": "deployer",
+	"password": "$1$pLkeCZ5O$zKvLFmXDtQhhB3Ur6ual71",
+	"ssh_keys": [
+	  "SSH_PUBLIC_KEY"
+	],
+	"groups": ["sudo" ,"sysadmin", "www-data"],
+	"shell": "\/bin\/bash"
+  }
