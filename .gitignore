@@ -1,0 +1,11 @@
+# SSH
+site-cookbooks/app-deploy/files/default
+/cookbooks/
+
+# Keys
+encrypted_data_bag_secret
+
+# Kitchen
+.kitchen/
+.kitchen.yml
+kitchen.yml

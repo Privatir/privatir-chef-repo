@@ -1,6 +1,41 @@
-source "https://api.berkshelf.com"
+source 'https://api.berkshelf.com'
 
-# cookbook dependencies
+# Initializing Users & Groups, setting hostname dependencies
 cookbook 'users', '~> 5.3.1'
 cookbook 'chef_hostname', '~> 0.6.1'
 cookbook 'sudo', '~> 4.0.0'
+
+# Postgres
+cookbook 'postgresql_lwrp', '~> 1.2.1'
+cookbook 'locale', '~> 2.0.1'
+
+# Ruby Dependencies
+cookbook 'chef_rvm', '~> 2.0.0'
+
+# Nodejs Dependencies
+cookbook 'nodejs', '~> 5.0.0'
+
+# Redis Dependencies
+cookbook 'redis', git: 'git://github.com/phlipper/chef-redis.git'
+
+# Nginx Dependencies
+cookbook 'nginx', '~> 7.0.2'
+
+# SSH
+cookbook 'openssh', '~> 2.6.1'
+
+# Monitoring
+cookbook 'monit', '~> 1.0.0'
+
+cookbook 'app-hostname', path: './site-cookbooks/app-hostname'
+cookbook 'app-attributes', path: './site-cookbooks/app-attributes'
+cookbook 'app-users', path: './site-cookbooks/app-users'
+cookbook 'app-sudo', path: './site-cookbooks/app-sudo'
+cookbook 'app-postgresql', path: './site-cookbooks/app-postgresql'
+cookbook 'app-monit', path: './site-cookbooks/app-monit'
+cookbook 'app-deploy', path: './site-cookbooks/app-deploy'
+cookbook 'app-redis', path: './site-cookbooks/app-redis'
+cookbook 'app-ruby', path: './site-cookbooks/app-ruby'
+cookbook 'app-nodejs', path: './site-cookbooks/app-nodejs'
+cookbook 'app-nginx', path: './site-cookbooks/app-nginx'
+cookbook 'app-openssh', path: './site-cookbooks/app-openssh'

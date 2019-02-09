@@ -1,0 +1,10 @@
+# site-cookbooks/app-deploy/templates/dev/database.yml.erb
+
+---
+<%= @environment %>:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= @database %>
+  user: <%= @user %>
+  password: <%= @password %>
+  pool: 20

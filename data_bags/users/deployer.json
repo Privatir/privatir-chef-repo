@@ -2,8 +2,12 @@
 	"id": "deployer",
 	"password": "$1$pLkeCZ5O$zKvLFmXDtQhhB3Ur6ual71",
 	"ssh_keys": [
-	  "SSH_PUBLIC_KEY"
+		"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBE/7kX+rYvMrL5IUMufBuHRrwCZb3XuLWaMCDz7FzoRVh3HJpO0KmsN57TrNEzmBOaporEyr+UyRXrxkoGcszxqx9ebfl9z87nM7av/XIqtPuDpmoaLZRH8vP5DS7apZ84D4ZCr5aowrAIE1rji1f4D1bBkaGz1FZE9Z7xrPpfSs7J6kQ3qEYuqoCfbsIoRK5Qz1lTRnE7I0HK3YzDkJJsxAVE75NCCucfvaHdVzMzGUNcDiL4EmtOj4csd3F0hDY2Y/LtgvHCe6ca1c/HRUJ4wzE1EowZm55rV7iBQ6iH8KYi6uwKiAJ+rRD1K99kYujh14VOzADU/r+syF2pMqj cameron.rison@utexas.edu"
 	],
-	"groups": ["sudo" ,"sysadmin", "www-data"],
+	"groups": [
+		"sudo",
+		"sysadmin",
+		"www-data"
+	],
 	"shell": "\/bin\/bash"
-  }
+}

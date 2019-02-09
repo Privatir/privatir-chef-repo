@@ -1,4 +1,5 @@
 users_attributes = [
+  node['users']['system']['nginx'],
   node['users']['system']['application']
 ]
 

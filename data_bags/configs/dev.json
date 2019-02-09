@@ -1,0 +1,24 @@
+{
+  "id": "dev",
+  "database": {
+    "encrypted_data": "v1k76w0/TfmHQXT30Gzw+z0wMiqcKOHIvf9QPQsICYoDWUi9OOunvKnkLVhG\n0P3Chxet0Eh6YkDyII1KlBxt5nPnA54=\n",
+    "iv": "b3Iw6hOH1ys/ogWV\n",
+    "auth_tag": "iOhUCkAlRGAaRkYjDig3Yg==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "application": {
+    "encrypted_data": "PAtLPpSCDk7krvRjolBY6Y52Qg==\n",
+    "iv": "Sb1PRRNT7zpMu9lY\n",
+    "auth_tag": "+xsnFIsv6Uii6mKpAii0lA==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "monit": {
+    "encrypted_data": "291bXLKtVkT7ZiFCOOjOkGkWCR11PzVr/yZSDUMxr4MaDSEgL/iJM6/hXv6C\nXC7YnXRWa7LOZ814T53PUw==\n",
+    "iv": "4KggO8H5xZhdrE2U\n",
+    "auth_tag": "/vLuGBKyv4KM2F7oH+X4BQ==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  }
+}

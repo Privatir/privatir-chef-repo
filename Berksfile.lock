@@ -1,0 +1,141 @@
+DEPENDENCIES
+  app-attributes
+    path: site-cookbooks/app-attributes
+  app-deploy
+    path: site-cookbooks/app-deploy
+  app-hostname
+    path: site-cookbooks/app-hostname
+  app-monit
+    path: site-cookbooks/app-monit
+  app-nginx
+    path: site-cookbooks/app-nginx
+  app-nodejs
+    path: site-cookbooks/app-nodejs
+  app-openssh
+    path: site-cookbooks/app-openssh
+  app-postgresql
+    path: site-cookbooks/app-postgresql
+  app-redis
+    path: site-cookbooks/app-redis
+  app-ruby
+    path: site-cookbooks/app-ruby
+  app-sudo
+    path: site-cookbooks/app-sudo
+  app-users
+    path: site-cookbooks/app-users
+  chef_hostname (~> 0.6.1)
+  chef_rvm (~> 2.0.0)
+  locale (~> 2.0.1)
+  monit (~> 1.0.0)
+  nginx (~> 7.0.2)
+  nodejs (~> 5.0.0)
+  openssh (~> 2.6.1)
+  postgresql_lwrp (~> 1.2.1)
+  redis
+    git: git://github.com/phlipper/chef-redis.git
+    revision: 7476279fc9c8727f082b8d77b5e1922dc2ef437b
+  sudo (~> 4.0.0)
+  users (~> 5.3.1)
+
+GRAPH
+  app-attributes (0.1.0)
+  app-deploy (0.1.0)
+    app-attributes (>= 0.0.0)
+    app-users (>= 0.0.0)
+  app-hostname (0.1.0)
+    chef_hostname (>= 0.0.0)
+  app-monit (0.1.0)
+    app-attributes (>= 0.0.0)
+    app-deploy (>= 0.0.0)
+    app-postgresql (>= 0.0.0)
+    monit (>= 0.0.0)
+  app-nginx (0.1.0)
+    app-attributes (>= 0.0.0)
+    app-deploy (>= 0.0.0)
+    app-users (>= 0.0.0)
+    nginx (>= 0.0.0)
+  app-nodejs (0.1.0)
+    app-attributes (>= 0.0.0)
+    nodejs (>= 0.0.0)
+  app-openssh (0.1.0)
+    openssh (>= 0.0.0)
+  app-postgresql (0.1.0)
+    app-attributes (>= 0.0.0)
+    apt (>= 0.0.0)
+    locale (>= 0.0.0)
+    postgresql_lwrp (>= 0.0.0)
+  app-redis (0.1.0)
+    redis (>= 0.0.0)
+  app-ruby (0.1.0)
+    app-attributes (>= 0.0.0)
+    chef_rvm (>= 0.0.0)
+  app-sudo (0.1.0)
+    sudo (>= 0.0.0)
+  app-users (0.1.0)
+    app-attributes (>= 0.0.0)
+    users (>= 0.0.0)
+  apt (7.1.1)
+  ark (4.0.0)
+    build-essential (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+  build-essential (8.2.1)
+    mingw (>= 1.1)
+    seven_zip (>= 0.0.0)
+  chef_gem (0.1.0)
+  chef_hostname (0.6.1)
+  chef_rvm (2.0.0)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    chef_gem (>= 0.0.0)
+    curl (>= 0.0.0)
+    sudo (>= 0.0.0)
+  compat_resource (12.19.1)
+  cron (6.2.1)
+  curl (2.0.4)
+  iptables (4.5.0)
+  locale (2.0.1)
+  mingw (2.1.0)
+    seven_zip (>= 0.0.0)
+  monit (1.0.0)
+    poise (~> 2.0)
+    poise-monit (~> 1.0)
+  nginx (7.0.2)
+    build-essential (>= 0.0.0)
+    compat_resource (>= 12.16.3)
+    ohai (>= 4.1.0)
+    yum-epel (>= 0.0.0)
+    zypper (>= 0.0.0)
+  nodejs (5.0.0)
+    ark (>= 2.0.2)
+    build-essential (>= 0.0.0)
+  ohai (5.2.5)
+  openssh (2.6.3)
+    iptables (>= 1.0)
+  poise (2.8.2)
+  poise-archive (1.5.0)
+    poise (~> 2.6)
+  poise-languages (2.1.2)
+    poise (~> 2.5)
+    poise-archive (~> 1.0)
+  poise-monit (1.6.0)
+    poise (~> 2.6)
+    poise-languages (~> 2.0)
+    poise-service (~> 1.1)
+  poise-service (1.5.2)
+    poise (~> 2.0)
+  postgresql_lwrp (1.2.4)
+    apt (>= 0.0.0)
+    cron (>= 0.0.0)
+    python (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  redis (0.5.6)
+    apt (>= 0.0.0)
+  seven_zip (3.1.0)
+    windows (>= 0.0.0)
+  sudo (4.0.1)
+  users (5.3.1)
+  windows (5.2.3)
+  yum-epel (3.3.0)
+  zypper (0.4.0)
