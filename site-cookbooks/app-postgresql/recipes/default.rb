@@ -1,6 +1,5 @@
 # site-cookbooks/app-postgresql/recipes/default.rb
 
-include_recipe 'locale'
 include_recipe 'postgresql_lwrp::apt_official_repository'
 include_recipe 'postgresql_lwrp'
 

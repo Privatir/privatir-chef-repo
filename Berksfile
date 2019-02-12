@@ -6,8 +6,7 @@ cookbook 'hostname', '~> 0.4.2'
 cookbook 'sudo', '~> 5.4.4'
 
 # Postgres
-cookbook 'postgresql_lwrp', '~> 1.2.1'
-cookbook 'locale', '~> 2.0.1'
+cookbook 'postgresql_lwrp', '~> 1.4.2'
 
 # Ruby Dependencies
 cookbook 'chef_rvm', '~> 2.0.0'

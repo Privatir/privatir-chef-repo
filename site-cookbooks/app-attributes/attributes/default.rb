@@ -10,19 +10,20 @@ override['locale']['lc_all'] = node['locale']['lang']
 
 # Postgresql -----------------------------------------------------
 
+override['postgresql']['enable_pgdg_apt'] = true
 override['postgresql']['version'] = '9.6'
 override['postgresql']['users'] = [{
   'name' => 'deployer',
-  'encrypted_password' => 'md55e6929205cef1138e75eeedd28114ca4',
+  'encrypted_password' => 'a6e5313fbc0d1d1084075a06b0e85a3e',
   'superuser' => true
 }, {
   'name' => node['project']['name'],
-  'encrypted_password' => 'md55e6929205cef1138e75eeedd28114ca4',
+  'encrypted_password' => 'a6e5313fbc0d1d1084075a06b0e85a3e',
   'superuser' => false # the user of the project's database must have access only to the project database
 }]
 
 override['postgresql']['databases'] = [{
-  'name' => "#{node['project']['name']}_#{node['environment']}",
+  'name' => "#{node['project']['name']}_#{node['chef_environment']}",
   'owner' => node['project']['name']
 }]
 

@@ -16,4 +16,13 @@ control 'users-1.0' do # A unique ID for this control
     it { should exist }
     its('group') { should eq 'www-data' }
   end
+
+  describe(user('deployer')) do
+    it { should exist }
+    its('group') { should eq 'deployer' }
+    its('groups') { should include 'deployer' }
+    its('groups') { should include 'sudo' }
+    its('groups') { should include 'sysadmin' }
+    its('groups') { should include 'www-data' }
+  end
 end
