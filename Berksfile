@@ -1,9 +1,9 @@
 source 'https://api.berkshelf.com'
 
 # Initializing Users & Groups, setting hostname dependencies
-cookbook 'users', '~> 5.3.1'
-cookbook 'chef_hostname', '~> 0.6.1'
-cookbook 'sudo', '~> 4.0.0'
+cookbook 'users', '~> 5.4.0'
+cookbook 'hostname', '~> 0.4.2'
+cookbook 'sudo', '~> 5.4.4'
 
 # Postgres
 cookbook 'postgresql_lwrp', '~> 1.2.1'

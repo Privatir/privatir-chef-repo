@@ -9,11 +9,18 @@ provisioner:
   roles_path: ./roles/
   data_bags_path: ./data_bags/
   encrypted_data_bag_secret_key_path: encrypted_data_bag_secret
+  always_update_cookbooks: true
 
 platforms:
   - name: ubuntu-16.04
+
+verifier:
+  name: inspec
 
 suites:
   - name: privatir-api 
     run_list:
       - role[setup]
+    verifier:
+      inspec_tests:
+        - privatir-app
