@@ -9,7 +9,7 @@ cookbook 'sudo', '~> 5.4.4'
 cookbook 'postgresql_lwrp', '~> 1.4.2'
 
 # Ruby Dependencies
-cookbook 'chef_rvm', '~> 2.0.0'
+cookbook 'ruby_rbenv', '~> 2.1.2'
 
 # Nodejs Dependencies
 cookbook 'nodejs', '~> 5.0.0'

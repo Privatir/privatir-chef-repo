@@ -23,7 +23,6 @@ DEPENDENCIES
     path: site-cookbooks/app-sudo
   app-users
     path: site-cookbooks/app-users
-  chef_rvm (~> 2.0.0)
   hostname (~> 0.4.2)
   monit (~> 1.0.0)
   nginx (~> 7.0.2)
@@ -33,6 +32,7 @@ DEPENDENCIES
   redis
     git: git://github.com/phlipper/chef-redis.git
     revision: 7476279fc9c8727f082b8d77b5e1922dc2ef437b
+  ruby_rbenv (~> 2.1.2)
   sudo (~> 5.4.4)
   users (~> 5.4.0)
 
@@ -66,7 +66,7 @@ GRAPH
     redis (>= 0.0.0)
   app-ruby (0.1.0)
     app-attributes (>= 0.0.0)
-    chef_rvm (>= 0.0.0)
+    ruby_rbenv (>= 0.0.0)
   app-sudo (0.1.0)
     sudo (>= 0.0.0)
   app-users (0.1.0)
@@ -79,16 +79,8 @@ GRAPH
   build-essential (8.2.1)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
-  chef_gem (0.1.0)
-  chef_rvm (2.0.0)
-    apt (>= 0.0.0)
-    build-essential (>= 0.0.0)
-    chef_gem (>= 0.0.0)
-    curl (>= 0.0.0)
-    sudo (>= 0.0.0)
   compat_resource (12.19.1)
   cron (6.2.1)
-  curl (2.0.4)
   hostname (0.4.2)
     hostsfile (>= 0.0.0)
   hostsfile (3.0.1)
@@ -131,6 +123,7 @@ GRAPH
     poise-python (>= 1.7.0)
   redis (0.5.6)
     apt (>= 0.0.0)
+  ruby_rbenv (2.1.2)
   seven_zip (3.1.0)
     windows (>= 0.0.0)
   sudo (5.4.4)

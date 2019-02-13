@@ -22,6 +22,7 @@ suites:
     run_list:
       - role[setup]
       - role[database]
+      - role[web]
     verifier:
       inspec_tests:
         - privatir-app

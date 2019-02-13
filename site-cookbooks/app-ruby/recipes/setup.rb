@@ -1,18 +1,15 @@
-# site-cookbooks/app-ruby/recipes/setup.rb
-
+version = node['ruby']['default']
 user = node['project']['user']
-attributes = node['ruby']
 
-# Install the required versions of Ruby
-chef_rvm 'install rubies' do
-  rubies attributes['versions']
-  rvmrc(rvm_autoupdate_flag: 1)
+# Install rbenv for deploy user
+rbenv_user_install user
+
+rbenv_ruby version do
   user user
+  verbose true
 end
 
-# Set Ruby version by default
-chef_rvm_ruby 'set default ruby version' do
-  version attributes['default']
-  default true
+# Set that version as the global Ruby
+rbenv_global version do
   user user
 end

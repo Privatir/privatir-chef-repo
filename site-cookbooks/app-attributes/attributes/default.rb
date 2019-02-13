@@ -1,6 +1,8 @@
 # Project -------------------------------------------------------
 
 override['project']['name'] = 'privatir'
+override['project']['user'] = 'deployer'
+override['project']['group'] = 'sysadmin'
 override['project']['repository'] = 'git@github.com:Privatir/privatir-api.git'
 
 # Locale ---------------------------------------------------------
