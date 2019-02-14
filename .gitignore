@@ -9,3 +9,6 @@ encrypted_data_bag_secret
 .kitchen/
 .kitchen.yml
 kitchen.yml
+
+# Chef
+*.pem

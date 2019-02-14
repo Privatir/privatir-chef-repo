@@ -1,9 +1,9 @@
-cookbook_path    ['cookbooks', 'site-cookbooks']
-node_path        'nodes'
-role_path        'roles'
-environment_path 'environments'
-data_bag_path    'data_bags'
-encrypted_data_bag_secret 'encrypted_data_bag_secret'
-
-knife[:berkshelf_path] = 'cookbooks'
-Chef::Config[:ssl_verify_mode] = :verify_peer if defined? ::Chef
+current_dir = ::File.dirname(__FILE__)
+log_level                :info
+log_location             $stdout
+node_name                'iillmaticc'
+client_key               ::File.join(current_dir, 'iillmaticc.pem')
+validation_client_name   'default-validator'
+validation_key           ::File.join(current_dir, 'default-validator.pem')
+chef_server_url          'https://ec2-3-95-197-61.compute-1.amazonaws.com/organizations/default'
+cookbook_path            [::File.join(current_dir, '../site-cookbooks')]
