@@ -34,12 +34,12 @@ override['ruby']['versions'] = ['2.6.1']
 override['ruby']['default'] = '2.6.1'
 
 # Nodejs ---------------------------------------------------------
-override['nodejs']['version'] = '9.3.0'
+override['nodejs']['version'] = '10.15.1'
 override['nodejs']['binary']['checksum'] = 'b7338f2b1588264c9591fef08246d72ceed664eb18f2556692b4679302bbe2a5'
 
 # Nginx -----------------------------------------------------------
 override['nginx']['source']['version'] = '1.13.7'
-override['nginx']['source']['checksum'] = 'beb732bc7da80948c43fd0bf94940a21a21b1c1ddfba0bd99a4b88e026220f5c'
+override['nginx']['source']['checksum'] = '33cacdd000977709f5f6c324ac6a4672dee21f28b2462a09eb5692d8c51d610c'
 
 # Monit -----------------------------------------------------------
 monit_configs = Chef::EncryptedDataBagItem.load('configs', 'dev')['monit']

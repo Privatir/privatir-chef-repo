@@ -15,7 +15,7 @@ cookbook 'ruby_rbenv', '~> 2.1.2'
 cookbook 'nodejs', '~> 5.0.0'
 
 # Redis Dependencies
-cookbook 'redis', '~> 3.0.4'
+cookbook 'redisio', '~> 3.0.0'
 
 # Nginx Dependencies
 cookbook 'nginx', '~> 7.0.2'
