@@ -3,4 +3,4 @@
 name 'web'
 description 'Web setup'
 
-run_list 'recipe[app-ruby]', 'recipe[app-nodejs]' # , 'recipe[app-redis]'
+run_list 'recipe[app-ruby]', 'recipe[app-nodejs]', 'recipe[app-redis]'
