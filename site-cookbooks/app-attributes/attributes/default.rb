@@ -38,8 +38,8 @@ override['nodejs']['version'] = '10.15.1'
 override['nodejs']['binary']['checksum'] = 'b7338f2b1588264c9591fef08246d72ceed664eb18f2556692b4679302bbe2a5'
 
 # Nginx -----------------------------------------------------------
-override['nginx']['source']['version'] = '1.13.7'
-override['nginx']['source']['checksum'] = '33cacdd000977709f5f6c324ac6a4672dee21f28b2462a09eb5692d8c51d610c'
+override['nginx']['source']['version'] = '1.15.8'
+override['nginx']['source']['checksum'] = 'a8bdafbca87eb99813ae4fcac1ad0875bf725ce19eb265d28268c309b2b40787'
 
 # Monit -----------------------------------------------------------
 monit_configs = Chef::EncryptedDataBagItem.load('configs', 'dev')['monit']

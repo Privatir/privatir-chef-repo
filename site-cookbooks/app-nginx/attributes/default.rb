@@ -1,21 +1,20 @@
 # site-cookbooks/app-nginx/attributes/default.rb
 
 include_attribute 'nginx::source'
+include_attribute 'nginx::passenger'
 
 source = node['nginx']['source']
 user = node['users']['system']['nginx']
 
-override['nginx']['install_method'] = 'source'
+override['nginx']['install_method'] = 'package'
+override['nginx']['package_name'] = 'nginx-extras'
+override['nginx']['repo_source'] = 'passenger'
 override['nginx']['version'] = source['version']
-override['nginx']['source']['prefix'] = "/opt/nginx-#{source['version']}"
-override['nginx']['source']['sbin_path'] = "#{source['prefix']}/sbin/nginx"
-override['nginx']['binary'] = source['sbin_path']
 override['nginx']['init_style'] = 'systemd'
 override['nginx']['user'] = user['name']
 override['nginx']['group'] = user['group']
-override['nginx']['source']['default_configure_flags'] = %W[
-  --prefix=#{source['prefix']}
-  --conf-path=#{node['nginx']['dir']}/nginx.conf
-  --sbin-path=#{source['sbin_path']}
-]
+override['nginx']['source']['use_existing_user'] = true
 override['nginx']['default_site_enabled'] = false
+override['domain_name'] = node['fqdn']
+override['nginx']['passenger']['ruby'] = '/usr/local/rbenv/shims/ruby'
+override['nginx']['passenger']['root'] = '/usr/lib/ruby/vendor_ruby/phusion_passenger/locations.ini'

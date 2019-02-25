@@ -18,7 +18,7 @@ cookbook 'nodejs', '~> 5.0.0'
 cookbook 'redisio', '~> 3.0.0'
 
 # Nginx Dependencies
-cookbook 'nginx', '~> 7.0.2'
+cookbook 'nginx', '~> 9.0.0'
 
 # SSH
 cookbook 'openssh', '~> 2.6.1'

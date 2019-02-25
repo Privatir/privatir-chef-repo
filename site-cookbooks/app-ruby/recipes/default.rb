@@ -1,17 +1,7 @@
 # site-cookbooks/app-ruby/recipes/default.rb
 
-version = node['ruby']['default']
-user = node['project']['user']
+rbenv_system_install 'privatir'
 
-# Install rbenv for deploy user
-rbenv_user_install user
+rbenv_ruby '2.6.1'
 
-rbenv_ruby version do
-  user user
-  verbose true
-end
-
-# Set that version as the global Ruby
-rbenv_global version do
-  user user
-end
+rbenv_global '2.6.1'
