@@ -30,8 +30,8 @@ override['postgresql']['databases'] = [{
 }]
 
 # Ruby -----------------------------------------------------------
-override['ruby']['versions'] = ['2.6.1']
-override['ruby']['default'] = '2.6.1'
+override['ruby']['version'] = ['2.5.1']
+override['ruby']['default'] = '2.5.1'
 
 # Nodejs ---------------------------------------------------------
 override['nodejs']['version'] = '10.15.1'

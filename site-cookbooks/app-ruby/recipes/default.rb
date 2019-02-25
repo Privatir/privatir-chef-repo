@@ -2,6 +2,6 @@
 
 rbenv_system_install 'privatir'
 
-rbenv_ruby '2.6.1'
+rbenv_ruby node['ruby']['version']
 
-rbenv_global '2.6.1'
+rbenv_global node['ruby']['version']
