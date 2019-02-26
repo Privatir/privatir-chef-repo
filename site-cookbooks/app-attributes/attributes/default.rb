@@ -4,6 +4,7 @@ override['project']['name'] = 'privatir'
 override['project']['user'] = 'deployer'
 override['project']['group'] = 'sysadmin'
 override['project']['repository'] = 'git@github.com:Privatir/privatir-api.git'
+default['domain_name'] = node['fqdn']
 
 # Locale ---------------------------------------------------------
 
@@ -16,11 +17,11 @@ override['postgresql']['enable_pgdg_apt'] = true
 override['postgresql']['version'] = '9.6'
 override['postgresql']['users'] = [{
   'name' => 'deployer',
-  'encrypted_password' => 'a6e5313fbc0d1d1084075a06b0e85a3e',
+  'encrypted_password' => 'md56f297a0fcb4b86fc709fbbdc5c5f79dc',
   'superuser' => true
 }, {
   'name' => node['project']['name'],
-  'encrypted_password' => 'a6e5313fbc0d1d1084075a06b0e85a3e',
+  'encrypted_password' => 'md56f297a0fcb4b86fc709fbbdc5c5f79dc',
   'superuser' => false # the user of the project's database must have access only to the project database
 }]
 
@@ -40,8 +41,3 @@ override['nodejs']['binary']['checksum'] = 'b7338f2b1588264c9591fef08246d72ceed6
 # Nginx -----------------------------------------------------------
 override['nginx']['source']['version'] = '1.15.8'
 override['nginx']['source']['checksum'] = 'a8bdafbca87eb99813ae4fcac1ad0875bf725ce19eb265d28268c309b2b40787'
-
-# Monit -----------------------------------------------------------
-monit_configs = Chef::EncryptedDataBagItem.load('configs', 'dev')['monit']
-override['monit']['username'] = monit_configs['username']
-override['monit']['password'] = monit_configs['password']

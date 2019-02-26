@@ -5,14 +5,10 @@ DEPENDENCIES
     path: site-cookbooks/app-deploy
   app-hostname
     path: site-cookbooks/app-hostname
-  app-monit
-    path: site-cookbooks/app-monit
   app-nginx
     path: site-cookbooks/app-nginx
   app-nodejs
     path: site-cookbooks/app-nodejs
-  app-openssh
-    path: site-cookbooks/app-openssh
   app-postgresql
     path: site-cookbooks/app-postgresql
   app-redis
@@ -23,11 +19,10 @@ DEPENDENCIES
     path: site-cookbooks/app-sudo
   app-users
     path: site-cookbooks/app-users
+  deploy_resource (~> 1.0.2)
   hostname (~> 0.4.2)
-  monit (~> 1.0.0)
   nginx (~> 9.0.0)
   nodejs (~> 5.0.0)
-  openssh (~> 2.6.1)
   postgresql_lwrp (~> 1.4.2)
   redisio (~> 3.0.0)
   ruby_rbenv (~> 2.1.2)
@@ -39,13 +34,9 @@ GRAPH
   app-deploy (0.1.0)
     app-attributes (>= 0.0.0)
     app-users (>= 0.0.0)
+    deploy_resource (>= 0.0.0)
   app-hostname (0.1.0)
     hostname (>= 0.0.0)
-  app-monit (0.1.0)
-    app-attributes (>= 0.0.0)
-    app-deploy (>= 0.0.0)
-    app-postgresql (>= 0.0.0)
-    monit (>= 0.0.0)
   app-nginx (0.1.0)
     app-attributes (>= 0.0.0)
     app-users (>= 0.0.0)
@@ -53,8 +44,6 @@ GRAPH
   app-nodejs (0.1.0)
     app-attributes (>= 0.0.0)
     nodejs (>= 0.0.0)
-  app-openssh (0.1.0)
-    openssh (>= 0.0.0)
   app-postgresql (0.1.0)
     app-attributes (>= 0.0.0)
     apt (>= 0.0.0)
@@ -77,15 +66,12 @@ GRAPH
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
   cron (6.2.1)
+  deploy_resource (1.0.2)
   hostname (0.4.2)
     hostsfile (>= 0.0.0)
   hostsfile (3.0.1)
-  iptables (4.5.0)
   mingw (2.1.0)
     seven_zip (>= 0.0.0)
-  monit (1.0.0)
-    poise (~> 2.0)
-    poise-monit (~> 1.0)
   nginx (9.0.0)
     build-essential (>= 5.0)
     ohai (>= 4.1.0)
@@ -94,23 +80,15 @@ GRAPH
     ark (>= 2.0.2)
     build-essential (>= 0.0.0)
   ohai (5.2.5)
-  openssh (2.6.3)
-    iptables (>= 1.0)
   poise (2.8.2)
   poise-archive (1.5.0)
     poise (~> 2.6)
   poise-languages (2.1.2)
     poise (~> 2.5)
     poise-archive (~> 1.0)
-  poise-monit (1.6.0)
-    poise (~> 2.6)
-    poise-languages (~> 2.0)
-    poise-service (~> 1.1)
   poise-python (1.7.0)
     poise (~> 2.7)
     poise-languages (~> 2.0)
-  poise-service (1.5.2)
-    poise (~> 2.0)
   postgresql_lwrp (1.4.2)
     apt (>= 0.0.0)
     cron (>= 0.0.0)
