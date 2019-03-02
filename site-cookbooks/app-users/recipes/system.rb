@@ -15,9 +15,13 @@ users_attributes.each do |attributes|
   # Create the system user with the name attributes ['name']
   user attributes['name'] do
     system true
-    shell '/usr/sbin/nologin' # disallow user to interact with shell
+    shell '/bin/false' # disallow user to interact with shell
     gid attributes['group']
     manage_home attributes['home']
     action :create
   end
+end
+
+ohai 'reload' do
+  action :reload
 end

@@ -13,9 +13,9 @@ provisioner:
   encrypted_data_bag_secret_key_path: encrypted_data_bag_secret
   always_update_cookbooks: true
   client_rb:
-    environment: dev
+    environment: development
 platforms:
-  - name: ubuntu-18.04
+  - name: ubuntu-16.04
 
 
 verifier:
@@ -25,9 +25,9 @@ suites:
   - name: privatir-api 
     run_list:
       - role[setup]
-      #- role[database]
+      - role[database]
       - role[web]
-      - role[deploy]
+      # - role[deploy]
     verifier:
       inspec_tests:
         - privatir-app

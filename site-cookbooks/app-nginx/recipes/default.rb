@@ -2,38 +2,34 @@
 
 include_recipe 'nginx'
 
-domain_name = node['domain_name']
-project_dir = 'privatir.com'
-
-%w[/var/www /var/www/privatir.com /var/www/privatir.com/html].each do |path|
-  directory path do
-    owner 'root'
-    group 'root'
-    mode '0755'
-    action :create
-  end
+directory '/var/log/nginx/passenger' do
+  owner 'root'
+  group 'root'
+  mode '755'
+  action :create
 end
 
-template '/var/www/privatir.com/html/index.html' do
-  source 'index.html.erb'
+file '/var/log/nginx/passenger/error.log' do
+  content ''
   owner 'root'
   group 'root'
   mode '0644'
 end
 
-template "#{node['nginx']['dir']}/sites-available/#{domain_name}" do
-  source "#{node.environment}.erb"
+template "#{node['nginx']['dir']}/sites-available/#{node['fqdn']}" do
+  source "#{node.chef_environment}.nginx.conf.erb"
   owner 'root'
   group 'root'
   mode '0644'
   variables(
     ip: node[:ipaddress],
-    domain: domain_name,
-    project_dir: node['project']['root']
+    domain: node['fqdn'],
+    project_dir: node['project']['root'],
+    environment: node.chef_environment
   )
   notifies :restart, 'service[nginx]', :delayed
 end
 
-nginx_site domain_name do
+nginx_site node['fqdn'] do
   action :enable
 end

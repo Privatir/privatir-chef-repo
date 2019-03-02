@@ -1,4 +1,4 @@
-# site-cookbooks/app-nginx/templates/dev.erb
+# sitt-cookbooks/app-nginx/templates/dev.erb
 
 server {
   listen 80;
@@ -7,10 +7,12 @@ server {
   error_log /var/log/nginx.error.log info;
   client_max_body_size 64M;
   keepalive_timeout 10;
-  root /var/www/privatir.com/html;
+  root <%=@project_dir%>/current/public; 
   index index.html;
   
   passenger_enabled on;
+  passenger_app_root <%=@project_dir%>/current;
+  rails_env <%=@environment%>;
 
   location / {
     gzip_static off;
