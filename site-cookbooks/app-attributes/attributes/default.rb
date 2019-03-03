@@ -1,5 +1,4 @@
 # Project -------------------------------------------------------
-
 override['project']['name'] = 'privatir'
 override['project']['user'] = 'deployer'
 override['project']['group'] = 'sysadmin'
@@ -7,12 +6,10 @@ override['project']['repository'] = 'git@github.com:Privatir/privatir-api.git'
 default['domain_name'] = node['fqdn']
 
 # Locale ---------------------------------------------------------
-
 override['locale']['lang'] = 'en_US.UTF-8'
 override['locale']['lc_all'] = node['locale']['lang']
 
 # Postgresql -----------------------------------------------------
-
 override['postgresql']['enable_pgdg_apt'] = true
 override['postgresql']['version'] = '9.6'
 override['postgresql']['users'] = [{

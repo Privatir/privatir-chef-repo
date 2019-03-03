@@ -1,7 +1,5 @@
 # site-cookbooks/app-deploy/recipes/default.rb
 
-encrypted_data = search(:configs, 'id:dev')
-
 config = node['project']
 
 user = config['user']
@@ -13,12 +11,11 @@ home_path = File.join('/', 'home', user)
 
 shared_path = File.join(root_path, 'shared')
 config_path = File.join(shared_path, 'config')
-bundle_path = File.join(shared_path, 'vendor', 'bundle')
 ssh_path = File.join(shared_path, '.ssh')
 ssh_key_file = File.join(ssh_path, user)
 ssh_wrapper_file = File.join(ssh_path, 'wrap-ssh4git.sh')
 
-# SSH -------------------------------------------------------------------------------------------------
+# SSH for privatirapi -------------------------------------------------------------------------------------------------
 directory ssh_path do
   owner user
   group group
@@ -66,7 +63,7 @@ template File.join(config_path, 'database.yml') do
   mode 0o644
 end
 
-# rails env configuration via figaro
+# RAILS ENV CONFIGURATION VIA FIGARO
 template File.join(config_path, 'application.yml') do
   source File.join(node.chef_environment, 'application.yml.erb')
   variables(
@@ -90,16 +87,16 @@ deploy node['domain_name'] do
   user user
   group group
 
-  # Set global environments
+  # SET GLOBAL ENVIRONMENTS
   environment(
     'HOME' => home_path,
     'RAILS_ENV' => node.chef_environment
   )
 
-  # Before you start to run the migration, create tmp and public directories.
+  # BEFORE YOU START TO RUN THE MIGRATION, CREATE TMP AND PUBLIC DIRECTORIES.
   create_dirs_before_symlink %w[tmp public]
 
-  # Map files in a shared directory to their paths in the current release directory.
+  # MAP FILES IN A SHARED DIRECTORY TO THEIR PATHS IN THE CURRENT RELEASE DIRECTORY.
   symlinks(
     'config/database.yml' => 'config/database.yml',
     'config/application.yml' => 'config/application.yml',
@@ -112,12 +109,14 @@ deploy node['domain_name'] do
     'tmp/sockets' => 'tmp/sockets'
   )
 
+  # ADD SYMLINKS TO THESE CONFIGS THAT SHOULD BE FRESH PER DEPLOY
   symlink_before_migrate(
     'config/application.yml' => 'config/application.yml',
     'config/database.yml' => 'config/database.yml',
     'config/credentials.yml.enc' => 'config/credentials.yml.enc'
   )
 
+  # TASK PERFORMED BEFORE DATABASE MIGRATIONS
   before_migrate do
     # Install bundler gem
     execute 'install bundles' do
@@ -132,7 +131,7 @@ deploy node['domain_name'] do
       live_stream true
     end
 
-    # DB is already created w/ provisioned user; load db schema, migrate, seed
+    # DB IS ALREADY CREATED W/ PROVISIONED USER; LOAD DB SCHEMA, MIGRATE, SEED
     execute 'load schema' do
       command "/bin/bash -cl 'bundle exec rake db:schema:load'"
       cwd release_path
@@ -149,6 +148,7 @@ deploy node['domain_name'] do
   migration_command "/bin/bash -cl 'bundle exec rails db:migrate'"
   migrate true
 
+  # TASKS BEFORE RESTARTING NGINX + PASSENGER
   before_restart do
     execute 'seed database' do
       command "/bin/bash -cl 'bundle exec rake db:seed'"
@@ -164,5 +164,7 @@ deploy node['domain_name'] do
   end
 
   action :deploy
+
+  # RESTART NGINX, WHICH RESTARTS PASSENGER
   notifies :restart, 'service[nginx]', :delayed
 end

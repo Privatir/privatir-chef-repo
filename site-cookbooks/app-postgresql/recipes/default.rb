@@ -37,6 +37,7 @@ databases_hba = databases.map do |attributes|
   }
 end
 
+# LWRP to create main db cluster w/ prescribed config
 postgresql 'main' do
   cluster_version(version)
   cluster_create_options(locale: locale)
@@ -50,12 +51,6 @@ users.each do |attributes|
     in_version version
     superuser attributes['superuser']
     encrypted_password attributes['encrypted_password']
-  end
-
-  postgresql_database attributes['name'] do
-    in_cluster 'main'
-    in_version version
-    owner attributes['name']
   end
 end
 
