@@ -12,3 +12,6 @@ kitchen.yml
 
 # Chef
 *.pem
+
+# Apple
+.DS_Store
