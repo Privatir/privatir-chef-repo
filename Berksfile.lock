@@ -1,4 +1,5 @@
 DEPENDENCIES
+  acme (~> 4.0.0)
   app-attributes
     path: site-cookbooks/app-attributes
   app-deploy
@@ -30,6 +31,8 @@ DEPENDENCIES
   users (~> 5.4.0)
 
 GRAPH
+  acme (4.0.0)
+    compat_resource (>= 12.19)
   app-attributes (0.1.0)
   app-deploy (0.1.0)
     app-attributes (>= 0.0.0)
@@ -37,6 +40,7 @@ GRAPH
   app-hostname (0.1.0)
     hostname (>= 0.0.0)
   app-nginx (0.1.0)
+    acme (>= 0.0.0)
     app-attributes (>= 0.0.0)
     app-deploy (>= 0.0.0)
     nginx (>= 0.0.0)
@@ -64,6 +68,7 @@ GRAPH
   build-essential (8.2.1)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
+  compat_resource (12.19.1)
   cron (6.2.1)
   deploy_resource (1.0.2)
   hostname (0.4.2)

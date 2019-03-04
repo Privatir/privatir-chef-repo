@@ -14,6 +14,11 @@ server {
   passenger_app_root <%=@project_dir%>/current;
   rails_env <%=@environment%>;
 
+  listen 443 ssl;
+
+  ssl_certificate /etc/nginx/ssl/<%=@domain%>.pem;
+  ssl_certificate_key /etc/nginx/ssl/<%=@domain%>.key;
+
   location / {
     gzip_static off;
   }

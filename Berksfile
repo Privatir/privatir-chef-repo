@@ -20,6 +20,9 @@ cookbook 'redisio', '~> 3.0.0'
 # Nginx Dependencies
 cookbook 'nginx', '~> 9.0.0'
 
+# ACME client for generating SSL/TLS certs via Let's Encrypt
+cookbook 'acme', '~> 4.0.0'
+
 # Deploy resource, was deprecated in >= Chef 14.0...
 # Probably better best practice for this; mimics Capistrano deploy; deploy:migration
 cookbook 'deploy_resource', '~> 1.0.2'

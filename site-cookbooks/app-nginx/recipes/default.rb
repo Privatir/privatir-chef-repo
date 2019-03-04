@@ -1,6 +1,7 @@
 # site-cookbooks/app-nginx/recipes/default.rb
 
 include_recipe 'nginx'
+include_recipe '::certs'
 
 directory '/var/log/nginx/passenger' do
   owner 'root'
