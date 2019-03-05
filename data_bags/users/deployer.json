@@ -5,8 +5,8 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3xM9dFnpvGF5zabICPKWC9vDfJ9qF/vEtAtlbO0BiIlxpGxoMx+b03IKxWpXIElZWzR7Y49eSzlOWdriYSmYvW48ma/tkhvpAPkupXElEsGfAjXSpjjZ5kJL/3Z2C6co/kgg2+ZoOYTpzbQC7TWSU6ia4YBXd5RoDykpgzXI/kQYHgSGU2kb8SnJ+VBpDDYqz08qr6BxgsY8g2XicauhzZokEMAttzVyV/wGDDj/bxeauOLxoHC7dQiF/gzHodHWiiPiFs0ldRLJBwknzRv0kbz+8GErN+3y1JUT/vCzwib7re1fFev9uToH6fSai1JeXheXw8aoRCofdFLE/vw5xXjHLzMgZ5BNhG8oVSyqRevDuSe2XzsQB5YXay+IiY0Oo/27XDbpOp2OYY8HixsQm+/paUJsYTwVZyWuz3fsBWnj3RDXKRxMRWzG0WBQKOBbOg7YVsbj9knF7ryZ+G3BSCsU+3ywduxPdf6oRuGme1ksjAVAKsSi+nqVRbyShKIf8O78aEO/bObx9ATCoJCgO+sfvlka1DNrM8B5yrIr3Et9sHMcS23boc4koR04HjFVDoo0P9tt4rPI/fpqDJPWIoNlONkOJ/nlNzB1CNYpbNnRQ4yLos9tjs3/dnXEtXNWZqL8UDh8wmEtlQs9eernF1nEHGJL89VzzWJDeKpWctQ== cameron.rison@privatir.com"
   ],
   "groups": [
-    "www-data",
     "sysadmin",
+    "www-data",
     "sudo"
   ],
   "shell": "/bin/bash",

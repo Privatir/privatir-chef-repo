@@ -34,7 +34,7 @@ GRAPH
   acme (4.0.0)
     compat_resource (>= 12.19)
   app-attributes (0.1.0)
-  app-deploy (0.1.0)
+  app-deploy (0.1.1)
     app-attributes (>= 0.0.0)
     deploy_resource (>= 0.0.0)
   app-hostname (0.1.0)
