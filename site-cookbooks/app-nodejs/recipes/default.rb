@@ -20,7 +20,7 @@ end
 
 # Create private key for git checkout
 cookbook_file ssh_key_file do
-  source 'key'
+  source 'deploykey'
   owner user
   group group
   mode 0o600

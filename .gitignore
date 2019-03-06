@@ -2,6 +2,7 @@
 site-cookbooks/app-deploy/files/default
 site-cookbooks/app-nodejs/files/default
 /cookbooks/
+data_bags/**
 
 # Keys
 encrypted_data_bag_secret
@@ -13,6 +14,9 @@ kitchen.yml
 
 # Chef
 *.pem
+.chef/pivotal.rb
+.chef/syntaxcache/
+.chef/trusted_certs/
 
 # Apple
 .DS_Store
