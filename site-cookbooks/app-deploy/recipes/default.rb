@@ -80,7 +80,7 @@ end
 
 deploy node['domain_name'] do
   ssh_wrapper ssh_wrapper_file
-  repository config['repository']
+  repository config['repository']['api']
   branch config['branch']
   repository_cache 'repo'
   deploy_to config['root']
