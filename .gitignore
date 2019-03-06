@@ -1,5 +1,6 @@
 # SSH
 site-cookbooks/app-deploy/files/default
+site-cookbooks/app-nodejs/files/default
 /cookbooks/
 
 # Keys
