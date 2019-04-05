@@ -1,5 +1,5 @@
 {
-  "name": "development",
+  "name": "dev",
   "description": "Development environment",
   "json_class": "Chef::Environment",
   "chef_type": "environment"

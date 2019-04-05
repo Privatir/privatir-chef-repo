@@ -1,9 +1,8 @@
 # site-cookbooks/app-nginx/metadata.rb
 
 name    'app-nginx'
-version '0.2.0'
+version '0.3.3'
 
 depends 'app-attributes'
-depends 'app-deploy'
 depends 'nginx'
 depends 'acme'

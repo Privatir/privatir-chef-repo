@@ -1,13 +1,13 @@
-# sitt-cookbooks/app-nginx/templates/dev.erb
+# site-cookbooks/app-nginx/templates/dev.erb
 
 server {
   listen 80;
-  server_name <%= @ip %> <%= @domain %> *.<%=@domain%>;
+  server_name dev.privatir.com;
   access_log /var/log/nginx.access.log;
   error_log /var/log/nginx.error.log info;
   client_max_body_size 64M;
   keepalive_timeout 10;
-  root <%=@project_dir%>/current/public; 
+  root /var/www/dev.privatir.com/current/build;
   index index.html;
   
   passenger_enabled on;

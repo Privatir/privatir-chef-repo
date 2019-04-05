@@ -2,7 +2,7 @@
 site-cookbooks/app-deploy/files/default
 site-cookbooks/app-nodejs/files/default
 /cookbooks/
-./data_bags/
+*data_bags/
 
 # Keys
 encrypted_data_bag_secret

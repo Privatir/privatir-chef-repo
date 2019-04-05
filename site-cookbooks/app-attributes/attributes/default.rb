@@ -3,7 +3,7 @@ override['project']['name'] = 'privatir'
 override['project']['user'] = 'deployer'
 override['project']['group'] = 'sysadmin'
 override['project']['repository']['api'] = 'git@github.com:Privatir/privatir-api.git'
-override['project']['repository']['frontend'] = 'git@github.com:Privatir/privatir-frontend.git'
+override['project']['repository']['frontend'] = 'git@github.com:Privatir/privatir-fe.git'
 
 default['domain_name'] = node['fqdn']
 

@@ -1,3 +1,3 @@
 # site-cookbooks/app-hostname/recipes/default.rb
 
-hostname node.name # read from host json config -> privatir.com
+hostname "#{node.chef_environment}.privatir.com" # read from host json config -> privatir.com

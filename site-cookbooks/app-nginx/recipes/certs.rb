@@ -7,7 +7,7 @@ node.override['acme']['contact'] = ['mailto:cameron.rison@utexas.edu']
 # Real certificates please...
 node.override['acme']['endpoint'] = 'https://acme-v01.api.letsencrypt.org'
 
-site = node['fqdn']
+site = "#{node.chef_environment}.privatir.com"
 sans = ["www.#{site}"]
 
 directory '/etc/nginx/ssl' do
@@ -32,7 +32,7 @@ acme_certificate site.to_s do
   crt "/etc/nginx/ssl/#{site}.crt"
   key "/etc/nginx/ssl/#{site}.key"
   chain "/etc/nginx/ssl/#{site}.pem"
-  wwwroot "#{node['project']['root']}/current/public"
+  wwwroot "/var/www/#{node.chef_environment}.privatir.com/current/build"
   owner   'nginx'
   group   'www-data'
   notifies :restart, 'service[nginx]'

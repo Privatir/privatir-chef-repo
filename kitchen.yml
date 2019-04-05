@@ -2,8 +2,9 @@
 driver:
   name: vagrant
   network:
-    - ["forwarded_port", {guest: 80, host: 8080}]
-    - ["forwarded_port", {guest: 443, host: 8443}]
+    - ["forwarded_port", { guest: 80, host: 8080 }]
+    - ["forwarded_port", { guest: 443, host: 8443 }]
+    - ["forwarded_port", { guest: 22, host: 2222 }]
 
 provisioner:
   name: chef_zero
@@ -13,16 +14,15 @@ provisioner:
   encrypted_data_bag_secret_key_path: encrypted_data_bag_secret
   always_update_cookbooks: true
   client_rb:
-    environment: development
+    environment: dev 
 platforms:
-  - name: ubuntu-16.04
-
+  - name: ubuntu-18.04
 
 verifier:
   name: inspec
 
 suites:
-  - name: privatir-api 
+  - name: privatir-api
     run_list:
       - role[setup]
       - role[database]
@@ -31,4 +31,3 @@ suites:
     verifier:
       inspec_tests:
         - privatir-app
-    
