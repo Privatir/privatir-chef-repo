@@ -24,7 +24,6 @@ acme_selfsigned site.to_s do
   chain "/etc/nginx/ssl/#{site}.pem"
   owner   'nginx'
   group   'www-data'
-  notifies :restart, 'service[nginx]', :immediate
   alt_names sans
 end
 
@@ -35,7 +34,6 @@ acme_certificate site.to_s do
   wwwroot "/var/www/#{node.chef_environment}.privatir.com/current/build"
   owner   'nginx'
   group   'www-data'
-  notifies :restart, 'service[nginx]'
   alt_names sans
   only_if { node.chef_environment.to_s.eql? 'production' }
 end

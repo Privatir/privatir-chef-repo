@@ -1,7 +1,6 @@
 # site-cookbooks/app-deploy/metadata.rb
 
 name    'app-deploy'
-version '0.1.6'
+version '0.2.5'
 
 depends 'app-attributes'
-depends 'deploy_resource'

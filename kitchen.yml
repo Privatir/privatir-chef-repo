@@ -27,7 +27,7 @@ suites:
       - role[setup]
       - role[database]
       - role[web]
-      # - role[deploy]
+      - role[deploy]
     verifier:
       inspec_tests:
         - privatir-app

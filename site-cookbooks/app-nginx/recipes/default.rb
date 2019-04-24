@@ -14,8 +14,8 @@ directory '/var/log/nginx/passenger' do
 end
 
 directory "/var/www/#{node.chef_environment}.privatir.com" do
-  owner nginx_user
-  group nginx_group
+  owner 'deployer'
+  group 'www-data'
   mode '755'
   action :create
 end
@@ -32,7 +32,6 @@ template "#{node['nginx']['dir']}/sites-available/default" do
   owner nginx_user
   group nginx_group
   mode '0644'
-  notifies :restart, 'service[nginx]', :delayed
 end
 
 template "#{node['nginx']['dir']}/sites-available/#{node.chef_environment}.privatir.com" do
